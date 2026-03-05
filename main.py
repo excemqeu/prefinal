@@ -11,7 +11,7 @@ def create_file():
     userwrite = input("Write a note...: ")
     try:
         with open("notes.txt", "x") as file:
-            file.write(userwrite)
+            file.write(userwrite + "\n")
             print("File created successfully.")
     except FileExistsError:
         print("File already exists!")
@@ -19,7 +19,9 @@ def create_file():
 def read_file():
     try:
          with open ("notes.txt", "r") as f:
+            print("======================File contents======================")
             print(f.read())
+            print("=========================================================")
     except FileNotFoundError:
             print("File is not found!")
 
@@ -61,3 +63,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    
